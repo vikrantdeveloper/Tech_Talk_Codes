@@ -1,0 +1,20 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "/home/vikrant/Downloads/arduino-nightly/tools/**",
+                "/home/vikrant/Downloads/arduino-nightly/hardware/arduino/avr/**"
+            ],
+            "forcedInclude": [
+                "/home/vikrant/Downloads/arduino-nightly/hardware/arduino/avr/cores/arduino/Arduino.h"
+                "/home/vikrant/Downloads/arduino-nightly/libraries/**"
+            ],
+            "intelliSenseMode": "gcc-x64",
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "gnu11",
+            "cppStandard": "gnu++14"
+        }
+    ],
+    "version": 4
+}

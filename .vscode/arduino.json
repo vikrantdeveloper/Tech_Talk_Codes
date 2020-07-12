@@ -1,0 +1,7 @@
+{
+    "programmer": "AVR ISP",
+    "sketch": "sensors_interface.ino",
+    "port": "COM5",
+    "board": "arduino:avr:uno",
+    "output": "../build"
+}
