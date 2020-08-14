@@ -1,6 +1,6 @@
-# Free RTOS Session
+# FreeRTOS Session
 
-This example demonstrates how to utilize FreeRTOS of ESP32 by echoing back to sender "hello world" and Blinking the LED at same time.
+This example demonstrates how to utilize FreeRTOS of ESP32 by echoing back to sender "hello world" and blinking the LED at same time.
 
 ## How to use example
 
