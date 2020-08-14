@@ -2,8 +2,10 @@
 
 1. Install VLC player on the Laptop/PC
 2. Install MQTT broker on your laptop /PC
-3. The video will be processed through https at local server and it can be manually using laptop/PC keys
-4. In the script , the Client is "Vikrant" and subscribe topic is "hello".
+4. In the script , the client is "Vikrant" and subscribe topic is "hello".
 5. Download picamera module in raspberry pi
+
+# Introduction
+The robot moves autonomously and can be controlled manually as well. Video streaming can be viewed on a video media by the link local http link :- 192.168.1.1.
 
 
