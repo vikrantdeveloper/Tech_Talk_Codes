@@ -19,4 +19,4 @@ The projects:-
       
 Happy Learning :))
 
-For Tech-talks presentations , Kindly visit the speaker deck :- https://slides.com/geek_explorer
+Kindly visit the speaker deck for presentations :- https://slides.com/geek_explorer
