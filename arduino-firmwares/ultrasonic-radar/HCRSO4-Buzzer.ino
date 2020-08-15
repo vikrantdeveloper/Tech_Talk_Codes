@@ -1,80 +1,84 @@
-#include"Servo.h"
-int y=A0;
-int z=A1;
-Servo a;
-int buzz=10;
-int distancefm,d,i,e;
-int k=178;
-bool g=0; //can be excluded
+#include "Servo.h"
+#include "stdint.h"
 
-void setup() 
+// Pin configuration //
+#define SERVOPIN 9
+#define TRIGGERPIN A0
+#define ECHOPIN A1
+#define BUZZPIN 10
+
+Servo a;
+int distancefm;
+uint8_t g = 0; //can be excluded
+uint8_t i = 0; //rotation
+
+void setup()
 {
-Serial.begin(9600);
-pinMode(y,OUTPUT);  //Trigger pin
-pinMode(z,INPUT);  //Echo pin
-a.attach(9);
-pinMode(buzz,OUTPUT);
+   Serial.begin(9600);
+   pinMode(TRIGGERPIN, OUTPUT); //Trigger pin
+   pinMode(ECHOPIN, INPUT);     //Echo pin
+   a.attach(SERVOPIN);        // attach servo motor
+   pinMode(BUZZPIN, OUTPUT);   // buzzer output
 }
 int ultrasonic()
 {
-int durradfm;
-digitalWrite(y,LOW);
-delayMicroseconds(2);
-digitalWrite(y,HIGH);
-delayMicroseconds(10);
-durradfm=pulseIn(z,HIGH);
-distancefm=0.034*durradfm/2;
-return distancefm;
+   digitalWrite(TRIGGERPIN, LOW);
+   delayMicroseconds(2);
+   digitalWrite(TRIGGERPIN, HIGH);
+   delayMicroseconds(10);
+   int durradfm = pulseIn(ECHOPIN, HIGH);
+   int distancefm = 0.034 * durradfm / 2;
+   return distancefm;
 }
 void buzzer()
 {
-  tone(buzz,100); 
-  delay(100);        
-  noTone(buzz);     
-  delay(100);
+   tone(BUZZPIN, 100);
+   delay(100);
+   noTone(BUZZPIN);
+   delay(100);
 }
 
-void loop() 
+void loop()
 {
- for(i>0; i <= 180; i += 1 && g==0)
- {
-     d=ultrasonic();
-    if(d>10)
-     {
-      a.write(i);
-      delay(30);
-      Serial.println(d);
-     }
-    else
-     {
-      Serial.println(d);
+   for (i = 0; i <= 180; i += 1 && g == 0)
+   {
+      distancefm = ultrasonic();
+      if (distancefm > 10)
+      {
+         a.write(i);
+         delay(30);
+         Serial.println(distancefm);
+      }
+      else
+      {
+         Serial.println(distancefm);
+         delay(60);
+         buzzer();
+         i--;
+      }
+   }
+   for (i = 180; i >= 0; i -= 1 && g == 0)
+   {
+      distancefm = ultrasonic();
+      if (distancefm > 10)
+      {
+         a.write(i);
+         delay(30);
+         Serial.println(distancefm);
+      }
+      else
+      {
+         Serial.println(distancefm);
+         delay(60);
+         buzzer();
+         i--;
+      }
+   }
+   //Can be excluded
+   if (g == 1)
+   {
+      Serial.println(distancefm);
       delay(60);
       buzzer();
-      i--;
-     }
- }
-for(i< 180; i>=0; i-=1 && g==0)
- {
-  d=ultrasonic();
-  if(d>10)
-     {
-      a.write(i);
-      delay(30);
-      Serial.println(d);
-     }
-  else
-     {
-      Serial.println(d);
-      delay(60);
-      buzzer();
-      i--;
-     }
-  }
-  //Can be excluded
- if(g==1)
- {
-   Serial.println(d);
-    delay(60);
-    buzzer();
- }
- }
+   }
+}
