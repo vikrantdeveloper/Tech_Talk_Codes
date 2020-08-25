@@ -22,22 +22,21 @@ No external Hardware is required
 * Select the chip size from 2MB to 4MB using the command which opens the menuconfig
 ```
 idf.py menuconfig
-```
-or
-```
-idf.py menuconfig
-```
+```  
 
 * Set serial port under Serial Flasher Options.
 
 ### Build and Flash
 
-Build the project and flash it to the board, then run monitor tool to view serial output:
+* Clean the project and build to observe any errors.
 
 ```
-idf.py -p PORT flash monitor
+idf.py fullclean
+```  
 ```
-or
+idf.py build
+```
+* Flash the firmware to the board, run the monitor to view serial output
 ```
 idf.py -p PORT flash monitor
 ```
