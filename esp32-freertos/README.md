@@ -16,7 +16,9 @@ No external Hardware is required
 ### Configure the project
 
 clone the project in the folder where esp-idf folder is there , run the script in order to build the project using the command   
+```
 . ../esp-idf/export.sh
+```
 ```
 idf.py menuconfig
 ```
