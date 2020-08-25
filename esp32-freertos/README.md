@@ -6,7 +6,7 @@ This example demonstrates how to utilize FreeRTOS of ESP32 by echoing back to se
 
 ### Hardware Required
 
-The example can be run on any ESP32 development board connected to a PC with a single USB cable for flashing and
+The example can be run on any ESP32 wroom connected to a PC with a single USB cable for flashing and
 monitoring.
 
 ### Setup the Hardware
@@ -15,6 +15,8 @@ No external Hardware is required
 
 ### Configure the project
 
+clone the project in the folder where esp-idf folder is there. run the script in order to build the project using the command   
+. ../esp-idf/export.sh
 ```
 idf.py menuconfig
 ```
